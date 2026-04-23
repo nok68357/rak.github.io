@@ -3,9 +3,6 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AppRak</title>
-  
-  <link rel="icon" type="image/png" href="LogoRakServices.png">
-
   <style>
     .responsive-iframe {
       position: absolute;
@@ -26,12 +23,8 @@
   <script>
     const apps = new URL(window.location);
     const formUrl = apps.searchParams.get('apps');
-    
-    // ป้องกัน Error โดยเช็กว่า formUrl มีค่าและไม่ว่างเปล่า
-    if (formUrl && formUrl.trim() !== '') {
-      const url = decodeURIComponent(formUrl);
-      document.getElementById('myframe').src = url;
-    }
+    const url = decodeURIComponent(formUrl)
+          document.getElementById('myframe').src = url
   </script>
 </body>
 </html>
